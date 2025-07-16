@@ -1,32 +1,26 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar'
-import HomePage from './pages/HomePage'
-import ProjectListPage from './pages/ProjectListPage'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from "react-router-dom"
 
+import ProjectListPage from "./pages/ProjectListPage"
+import HomePage from "./pages/HomePage"
+import Navbar from "./components/Navbar"
+import CreateProjectPage from "./pages/CreateProjectPage"
+import ProjectDetailsPage from "./pages/ProjectDetailsPage"
+import EditProjectPage from "./pages/EditProjectPage"
 
 function App() {
- 
 
   return (
     <>
       <Navbar />
-      <h1>React Project Management</h1>
 
       <Routes>
-        <Route path='/' element={<HomePage/>}/>
-        <Route path='/projects' element={<ProjectListPage/>}/>
-
-        
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<ProjectListPage />} />
+        <Route path="/projects/create" element={<CreateProjectPage />} />
+        <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
+        <Route path="/projects/edit/:projectId" element={<EditProjectPage />} />
       </Routes>
 
-      <ProjectListPage />
-
-
-      <HomePage />
-
-    
-     
     </>
   )
 }
