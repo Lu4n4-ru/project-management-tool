@@ -1,6 +1,12 @@
+import { NavLink } from "react-router-dom"
+
 function Navbar () {
     return (
-        <h1></h1>
+        <><NavLink to="/">
+            <button>Home</button>
+        </NavLink><NavLink to="/projects">
+                <button>Project list</button>
+            </NavLink></>
     )
 }
 
